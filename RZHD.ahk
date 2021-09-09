@@ -3,16 +3,16 @@
 SendMode Input
 SetWorkingDir, C:
 
-    URLDownloadToFile, https://github.com/AlaoisMC/RZHD/raw/main/upd_new.ini, %A_WorkingDir%\RZHD\Conf\upd_new.ini
+    URLDownloadToFile, https://github.com/Alaaois/RZHD/raw/main/upd_new.ini, %A_WorkingDir%\RZHD\Conf\upd_new.ini
     IniRead, updater_upd, %A_WorkingDir%\RZHD\Conf\upd_new.ini, VER_UPD, updater_upd
     IniRead, updater, %A_WorkingDir%\RZHD\Conf\upd_last.ini, VER, updater
 
     if (updater<updater_upd)
     {
-        MsgBox, , Автообновление, Обновления найдены`nПожалуйста подождите, 2
-        URLDownloadToFile, https://github.com/AlaoisMC/RZHD/blob/main/update.exe?raw=true, %A_WorkingDir%\RZHD\update.exe
+        MsgBox, , Автообновление update.exe, Обновления найдены`nПожалуйста подождите, 2
+        URLDownloadToFile, https://github.com/Alaaois/RZHD/blob/main/update.exe?raw=true, %A_WorkingDir%\RZHD\update.exe
         FileDelete, %A_WorkingDir%\RZHD\README.txt
-        URLDownloadToFile, https://github.com/AlaoisMC/RZHD/raw/main/README.txt, %A_WorkingDir%\RZHD\README.txt
+        URLDownloadToFile, https://github.com/Alaaois/RZHD/raw/main/README.txt, %A_WorkingDir%\RZHD\README.txt
         Sleep, 2000
         Run, %A_WorkingDir%\RZHD\README.txt
         IniWrite, %updater_upd%, %A_WorkingDir%\RZHD\Conf\upd_last.ini, VER, updater
@@ -28,13 +28,13 @@ SetWorkingDir, C:
     if (runs!=1)
     {
 
-        fileinstall, C:\Programs\GitRepo\AHK-for-RZHD-Province-4\README.txt, %A_WorkingDir%\RZHD\README.txt, 1
+        fileinstall, C:\Programs\GitClone\AHK-for-RZHD-Province-4\README.txt, %A_WorkingDir%\RZHD\README.txt, 1
             Run, %A_WorkingDir%\RZHD\README.txt
         Sleep, 5000
-        fileinstall, C:\Programs\GitRepo\AHK-for-RZHD-Province-4\Pic\ржд.png, %A_WorkingDir%\RZHD\Pic\ржд.png, 1
-            fileinstall, C:\Programs\GitRepo\AHK-for-RZHD-Province-4\Pic\maps.jpg, %A_WorkingDir%\RZHD\Pic\maps.jpg, 1
-            fileinstall, C:\Programs\GitRepo\AHK-for-RZHD-Province-4\Pic\info.png, %A_WorkingDir%\RZHD\Pic\info.png, 1
-            fileinstall, C:\Programs\GitRepo\AHK-for-RZHD-Province-4\Pic\ржд4.ico, %A_WorkingDir%\RZHD\Pic\ржд4.ico, 1
+        fileinstall, C:\Programs\GitClone\AHK-for-RZHD-Province-4\Pic\ржд.png, %A_WorkingDir%\RZHD\Pic\ржд.png, 1
+            fileinstall, C:\Programs\GitClone\AHK-for-RZHD-Province-4\Pic\maps.jpg, %A_WorkingDir%\RZHD\Pic\maps.jpg, 1
+            fileinstall, C:\Programs\GitClone\AHK-for-RZHD-Province-4\Pic\info.png, %A_WorkingDir%\RZHD\Pic\info.png, 1
+            fileinstall, C:\Programs\GitClone\AHK-for-RZHD-Province-4\Pic\ржд4.ico, %A_WorkingDir%\RZHD\Pic\ржд4.ico, 1
             IfExist, %A_WorkingDir%\RZHD\Conf\config.ini
             Gosub, ReadSettings
         Gui, 6: Show, NA xCenter yCenter w400 h300, First start
@@ -118,7 +118,7 @@ Main:
     Gui, 1: Add, Button, x520 y210 w100 h30 +BackGroundTrans gExit, Выйти
     Gui, 1: Font,
     Gui, 1: Font, s13 underline, Times New Roman
-    Gui, 1: Add, Link, x30 y240, <a href="https://github.com/AlaoisMC">Создатель</a>
+    Gui, 1: Add, Link, x30 y240, <a href="https://github.com/Alaaois">Создатель</a>
     Gui, 1: Add, Picture, x10 y10 w25 h25 gInfo1, %A_WorkingDir%\RZHD\Pic\info.png
     Gui, 1: Font,
     Gui, 1: Font, s10 underline, Times New Roman
